@@ -1,0 +1,50 @@
+{
+  "name": "Quasar",
+  "private": true,
+  "packageManager": "pnpm@10.24.0",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "qdev": "qvite dev",
+    "qbuild": "qvite build",
+    "build": "turbo run build",
+    "dev": "turbo run dev",
+    "lint": "eslint --fix",
+    "prepare": "simple-git-hooks",
+    "commit": "qui gc"
+  },
+  "dependencies": {
+    "pinia": "catalog:",
+    "vue": "catalog:",
+    "vue-router": "catalog:"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "catalog:",
+    "@quiteer/scripts": "catalog:",
+    "@quiteer/vite": "catalog:",
+    "@types/node": "catalog:",
+    "@unocss/eslint-plugin": "catalog:",
+    "@unocss/preset-icons": "catalog:",
+    "@unocss/preset-uno": "catalog:",
+    "@unocss/preset-wind3": "catalog:",
+    "@unocss/transformer-directives": "catalog:",
+    "@unocss/transformer-variant-group": "catalog:",
+    "@unocss/vite": "catalog:",
+    "eslint": "catalog:",
+    "lint-staged": "catalog:",
+    "naive-ui": "catalog:",
+    "prettier": "catalog:",
+    "simple-git-hooks": "catalog:",
+    "turbo": "catalog:",
+    "typescript": "catalog:",
+    "unocss": "catalog:"
+  },
+  "simple-git-hooks": {
+    "commit-msg": "pnpm qui gv",
+    "pre-commit": "pnpm lint-staged"
+  },
+  "lint-staged": {
+    "*": "eslint --fix"
+  }
+}
