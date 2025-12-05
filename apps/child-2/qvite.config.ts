@@ -7,6 +7,7 @@ export default defineConfig((envConfig) => {
   const { env: envOptions, plugins } = configFn(envConfig)
 
   const { root } = envConfig as ConfigEnv<ImportMetaEnv>
+  console.log('envConfig: ', envConfig)
 
   const envConfigPath = resolve(root, '..', '..')
 

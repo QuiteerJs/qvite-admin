@@ -6,10 +6,10 @@
     "node": ">=18"
   },
   "scripts": {
-    "qdev": "qvite dev",
-    "qbuild": "qvite build",
-    "build": "turbo run build",
-    "dev": "turbo run dev",
+    "dev": "qvite dev",
+    "build": "qvite build",
+    "build:child-1": "turbo run -F ./apps/child-1 build",
+    "build:child-2": "turbo run -F ./apps/child-2 build",
     "lint": "eslint --fix",
     "prepare": "simple-git-hooks",
     "commit": "qui gc"

@@ -5,6 +5,7 @@ catalogMode: prefer
 
 packages:
   - 'apps/*'
+  - 'docs/*'
   - 'packages/*'
 catalog:
   '@antfu/eslint-config': ^6.2.0
