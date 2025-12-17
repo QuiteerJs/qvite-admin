@@ -14,7 +14,10 @@ export default defineConfig((envConfig) => {
   return {
     vite: {
       server: {
-        port: 8090,
+        port: 8002,
+        headers: {
+          'Access-Control-Allow-Origin': '*',
+        },
       },
     },
     html: {
@@ -26,6 +29,9 @@ export default defineConfig((envConfig) => {
       ...envOptions,
       root: envConfigPath,
     },
-    plugins,
+    plugins: {
+      ...plugins,
+      VueDevTools: false,
+    },
   }
 })

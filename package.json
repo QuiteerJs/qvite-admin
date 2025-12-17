@@ -7,14 +7,17 @@
   },
   "scripts": {
     "dev": "qvite dev",
+    "dev:apps": "turbo run dev --parallel --filter='./apps/*'",
     "build": "qvite build",
-    "build:child-1": "turbo run -F ./apps/child-1 build",
-    "build:child-2": "turbo run -F ./apps/child-2 build",
+    "build:apps": "turbo run build --parallel --filter='./apps/*'",
     "lint": "eslint --fix",
     "prepare": "simple-git-hooks",
     "commit": "qui gc"
   },
   "dependencies": {
+    "@micro-zoe/micro-app": "catalog:",
+    "@vueuse/core": "catalog:",
+    "naive-ui": "catalog:",
     "pinia": "catalog:",
     "vue": "catalog:",
     "vue-router": "catalog:"
@@ -33,7 +36,6 @@
     "@unocss/vite": "catalog:",
     "eslint": "catalog:",
     "lint-staged": "catalog:",
-    "naive-ui": "catalog:",
     "prettier": "catalog:",
     "simple-git-hooks": "catalog:",
     "turbo": "catalog:",

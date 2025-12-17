@@ -23,6 +23,10 @@ out/
 build
 dist
 
+# types
+auto-imports.d.ts
+components.d.ts
+env.d.ts
 
 # Debug
 npm-debug.log*
@@ -32,3 +36,4 @@ yarn-error.log*
 # Misc
 .DS_Store
 *.pem
+

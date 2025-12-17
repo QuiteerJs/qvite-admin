@@ -1,17 +1,15 @@
-trustPolicy: no-downgrade
-shellEmulator: true
-cleanupUnusedCatalogs: true
-catalogMode: prefer
-
 packages:
-  - 'apps/*'
-  - 'docs/*'
-  - 'packages/*'
+  - .
+  - apps/*
+  - docs/*
+  - packages/*
+
 catalog:
-  '@antfu/eslint-config': ^6.2.0
+  '@antfu/eslint-config': ^6.7.1
+  '@micro-zoe/micro-app': 1.0.0-rc.28
   '@quiteer/scripts': ^0.0.12
-  '@quiteer/vite': ^0.0.6
-  '@types/node': ^24.10.0
+  '@quiteer/vite': ^0.1.1
+  '@types/node': ^24.10.4
   '@unocss/eslint-plugin': ^66.5.10
   '@unocss/preset-icons': ^66.5.10
   '@unocss/preset-uno': ^66.5.10
@@ -19,14 +17,27 @@ catalog:
   '@unocss/transformer-directives': ^66.5.10
   '@unocss/transformer-variant-group': ^66.5.10
   '@unocss/vite': ^66.5.10
-  eslint: ^9.39.1
+  '@vueuse/core': ^14.1.0
+  eslint: ^9.39.2
   lint-staged: ^16.2.7
   naive-ui: ^2.43.2
   pinia: ^3.0.4
   prettier: ^3.7.4
   simple-git-hooks: ^2.13.1
-  turbo: ^2.6.2
+  turbo: ^2.6.3
   typescript: 5.9.3
   unocss: ^66.5.10
   vue: ^3.5.25
-  vue-router: ^4.6.3
+  vue-router: ^4.6.4
+
+catalogMode: prefer
+
+cleanupUnusedCatalogs: true
+
+shellEmulator: true
+
+trustPolicy: no-downgrade
+
+trustPolicyExclude:
+  - chokidar@4.0.3
+  - semver@6.3.1

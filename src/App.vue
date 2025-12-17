@@ -1,14 +1,37 @@
 <script setup lang="ts">
-const envObj = import.meta.env
+import { dateZhCN, zhCN } from 'naive-ui'
+import { createTextVNode } from 'vue'
+
+const ContextHolder = defineComponent({
+  name: 'ContextHolder',
+  setup() {
+    function register() {
+      window.$loadingBar = useLoadingBar()
+      window.$dialog = useDialog()
+      window.$message = useMessage()
+      window.$notification = useNotification()
+    }
+
+    register()
+
+    return () => createTextVNode()
+  },
+})
 </script>
 
 <template>
-  <h1>You did it!</h1>
-  <a href="/child-1">Child 1</a>
-  <a href="/child-2">Child 2</a>
-  <p>
-    {{ JSON.stringify(envObj, null, 2) }}
-  </p>
+  <n-config-provider :locale="zhCN" :date-locale="dateZhCN" class="h-full">
+    <n-loading-bar-provider>
+      <n-dialog-provider>
+        <n-notification-provider>
+          <n-message-provider>
+            <ContextHolder />
+            <router-view />
+          </n-message-provider>
+        </n-notification-provider>
+      </n-dialog-provider>
+    </n-loading-bar-provider>
+  </n-config-provider>
 </template>
 
 <style scoped></style>
