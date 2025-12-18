@@ -52,5 +52,7 @@
     "scss",
     "pcss",
     "postcss"
-  ]
+  ],
+  "unocss.disable": false,
+  "unocss.root": "./"
 }

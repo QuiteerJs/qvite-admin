@@ -1,19 +1,16 @@
 import type { ConfigEnv } from '@quiteer/vite'
-import { resolve } from 'node:path'
 import { defineConfig } from '@quiteer/vite'
-import presetIcons from '@unocss/preset-icons'
 
 export default defineConfig((envConfig) => {
-  const { env, root } = envConfig as ConfigEnv<ImportMetaEnv>
+  const { env,  } = envConfig as ConfigEnv<ImportMetaEnv>
   console.log('envConfig: ', envConfig)
   console.log('env: ', env)
-
   const mainTs = (dir: string) => `/apps/${dir}/src/main.ts`
   const styleCss = (dir: string) => `/apps/${dir}/src/style.css`
 
+  
   return {
     vite: {
-      resolve: { alias: { '@': resolve(root, 'src') } },
       server: {
         port: 8000,
       },
@@ -38,6 +35,7 @@ export default defineConfig((envConfig) => {
     env: {
       requiredKeys: ['desc', 'baseURL'],
     },
+    UnoCSS: true,
     plugins: {
       Vue: [{
         template: {
@@ -46,17 +44,6 @@ export default defineConfig((envConfig) => {
             isCustomElement: tag => tag.startsWith('micro-app'),
           },
         },
-      }],
-      UnoCSS: [{
-        presets: [
-          presetIcons({
-            scale: 1,
-            extraProperties: {
-              display: 'inline-block',
-            },
-            warn: true,
-          }),
-        ],
       }],
     },
   }

@@ -1,4 +1,5 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
+import { BasicLayout, BlankLayout } from '../layouts'
 
 const router = createRouter({
   history: createWebHashHistory(),
@@ -6,6 +7,7 @@ const router = createRouter({
     {
       path: '/',
       redirect: '/home',
+      component: BasicLayout,
       children: [
         {
           name: 'home',
@@ -13,6 +15,11 @@ const router = createRouter({
           component: () => import('@/pages/home.vue'),
         },
       ],
+    },
+    {
+      path: '/child-app',
+      name: 'child-app',
+      component: () => import('@/pages/child-app.vue'),
     },
   ],
 })

@@ -8,15 +8,8 @@ catalog:
   '@antfu/eslint-config': ^6.7.1
   '@micro-zoe/micro-app': 1.0.0-rc.28
   '@quiteer/scripts': ^0.0.12
-  '@quiteer/vite': ^0.1.1
+  '@quiteer/vite': ^0.1.7
   '@types/node': ^24.10.4
-  '@unocss/eslint-plugin': ^66.5.10
-  '@unocss/preset-icons': ^66.5.10
-  '@unocss/preset-uno': ^66.5.10
-  '@unocss/preset-wind3': ^66.5.10
-  '@unocss/transformer-directives': ^66.5.10
-  '@unocss/transformer-variant-group': ^66.5.10
-  '@unocss/vite': ^66.5.10
   '@vueuse/core': ^14.1.0
   eslint: ^9.39.2
   lint-staged: ^16.2.7
@@ -26,7 +19,6 @@ catalog:
   simple-git-hooks: ^2.13.1
   turbo: ^2.6.3
   typescript: 5.9.3
-  unocss: ^66.5.10
   vue: ^3.5.25
   vue-router: ^4.6.4
 

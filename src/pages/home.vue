@@ -1,18 +1,22 @@
 <script setup lang="ts">
-function handleClick() {
-  window.$message?.success('点击了按钮')
-}
+const router = useRouter()
 
-const isDev = computed(() => import.meta.env.DEV)
+function handleClick(name: string) {
+  router.push({ name: 'child-app', query: { name } })
+}
 </script>
 
 <template>
   <div>
-    <micro-app name="child-1" url="http://localhost:8001/" :iframe="isDev" :disable-sandbox="!isDev" />
-    <micro-app name="child-2" url="http://localhost:8002/" :iframe="isDev" :disable-sandbox="!isDev" />
-    <n-button type="primary" @click="handleClick">
-      按钮
-    </n-button>
+    <n-flex>
+      <TestCom />
+      <n-button type="primary" @click="handleClick('child-1')">
+        去子页面 1
+      </n-button>
+      <n-button type="primary" @click="handleClick('child-2')">
+        去子页面 2
+      </n-button>
+    </n-flex>
   </div>
 </template>
 
