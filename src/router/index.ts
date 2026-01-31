@@ -1,27 +1,12 @@
 import { createRouter, createWebHashHistory } from 'vue-router'
-import { BasicLayout, BlankLayout } from '../layouts'
+import { routes as autoRoutes } from 'vue-router/auto-routes'
+
+export const routes = [...autoRoutes]
+console.log('routes: ', routes)
 
 const router = createRouter({
   history: createWebHashHistory(),
-  routes: [
-    {
-      path: '/',
-      redirect: '/home',
-      component: BasicLayout,
-      children: [
-        {
-          name: 'home',
-          path: '/home',
-          component: () => import('@/pages/home.vue'),
-        },
-      ],
-    },
-    {
-      path: '/child-app',
-      name: 'child-app',
-      component: () => import('@/pages/child-app.vue'),
-    },
-  ],
+  routes,
 })
 
 export default router

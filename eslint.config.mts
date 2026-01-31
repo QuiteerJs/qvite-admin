@@ -5,5 +5,6 @@ export default antfu({
   vue: true,
   yaml: false,
   rules: {
+    'no-console': ['warn', { allow: ['info', 'warn', 'error', 'time', 'timeEnd'] }],
   },
 })

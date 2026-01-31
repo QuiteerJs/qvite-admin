@@ -1,7 +1,13 @@
-import { defineConfig, unoConfig } from '@quiteer/vite/uno.config.ts'
+import { defineConfig, NaiveUIPreset, QuiteerPreset } from '@quiteer/unocss'
 
 export default defineConfig({
-  shortcuts: {
-    'flex-center': 'bg-red w-100 h-100'
-  }
+  content: {
+    pipeline: {
+      exclude: ['node_modules', 'dist'],
+    },
+  },
+  presets: [
+    QuiteerPreset() as any,
+    NaiveUIPreset(),
+  ],
 })

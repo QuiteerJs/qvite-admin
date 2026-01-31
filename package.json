@@ -1,7 +1,7 @@
 {
   "name": "Quasar",
-  "private": true,
   "type": "module",
+  "private": true,
   "packageManager": "pnpm@10.24.0",
   "engines": {
     "node": ">=18"
@@ -17,6 +17,8 @@
   },
   "dependencies": {
     "@micro-zoe/micro-app": "catalog:",
+    "@quiteer/naive-extra": "catalog:",
+    "@quiteer/unocss": "catalog:",
     "@vueuse/core": "catalog:",
     "naive-ui": "catalog:",
     "pinia": "catalog:",
@@ -25,15 +27,18 @@
   },
   "devDependencies": {
     "@antfu/eslint-config": "catalog:",
+    "@iconify/vue": "catalog:",
     "@quiteer/scripts": "catalog:",
     "@quiteer/vite": "catalog:",
     "@types/node": "catalog:",
+    "@unocss/eslint-plugin": "catalog:",
     "eslint": "catalog:",
     "lint-staged": "catalog:",
     "prettier": "catalog:",
     "simple-git-hooks": "catalog:",
     "turbo": "catalog:",
-    "typescript": "catalog:"
+    "typescript": "catalog:",
+    "unplugin-vue-router": "catalog:"
   },
   "simple-git-hooks": {
     "commit-msg": "pnpm qui gv",

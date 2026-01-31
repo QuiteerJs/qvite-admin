@@ -2,13 +2,12 @@ import type { ConfigEnv } from '@quiteer/vite'
 import { defineConfig } from '@quiteer/vite'
 
 export default defineConfig((envConfig) => {
-  const { env,  } = envConfig as ConfigEnv<ImportMetaEnv>
+  const { env } = envConfig as ConfigEnv<ImportMetaEnv>
   console.log('envConfig: ', envConfig)
   console.log('env: ', env)
   const mainTs = (dir: string) => `/apps/${dir}/src/main.ts`
   const styleCss = (dir: string) => `/apps/${dir}/src/style.css`
 
-  
   return {
     vite: {
       server: {
