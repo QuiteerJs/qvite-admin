@@ -17,6 +17,9 @@ export default defineConfig((envConfig) => {
     html: {
       config: {
         title: '主应用',
+        tags: [
+          { tag: 'link', attrs: { rel: 'icon', href: '/favicon.ico' }, selfClosing: true, position: 'head' },
+        ],
       },
       pages: {
         '/child-1/index.html': {
